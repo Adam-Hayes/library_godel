@@ -1,0 +1,35 @@
+insert into director(first_name, last_name, birth_date)
+values ('John', 'Smith', '1990-03-05'),
+       ('Sam', 'Ohayo', '1988-10-04'),
+       ('Jane', 'Black', '1992-12-03'),
+       ('Bill', 'Marley', '1995-02-12'),
+       ('Maria', 'Watson', '1994-05-10'),
+       ('Kristine', 'Johnson', '1985-05-09'),
+       ('Fred', 'Martin', '1990-09-06'),
+       ('Martin', 'Flamel', '1991-04-11'),
+       ('Sarah', 'Parker', '1980-12-25'),
+       ('Jack', 'Stone', '1983-01-07'),
+       ('Adam', 'Hayes', '1997-03-21');
+
+Insert into movie(director_id, name, release_date, genre)
+values (1, '1945', '2017-03-07', 'Historic'),
+       (1, 'To the moon', '2018-03-05', 'Fantastic'),
+       (2, 'Fuel', '2019-01-13', 'Action'),
+       (3, 'Bloodly murder', '2019-10-20', 'Thriller'),
+       (4, 'Sparta', '2020-12-03', 'Historic'),
+       (4, 'Sparta 2', '2018-09-07', 'Historic'),
+       (4, 'New Sparta', '2022-05-09', 'Historic'),
+       (4, 'Leo', '2023-11-15', 'Historic'),
+       (5, 'My lovely Jane', '2021-08-30', 'Drama'),
+       (6, 'Family on vacation', '2020-05-01', 'Comedy'),
+       (7, 'Dracula', '2020-09-14', 'Horror'),
+       (8, 'Cleopatra', '2019-07-18', 'Historic'),
+       (9, 'Steel gun', '2022-03-01', 'Action'),
+       (10, 'Around the world', '2023-08-08', 'Adventure '),
+       (3, 'Eleven', '2018-11-01', 'Fantastic'),
+       (3, 'Christmas time ', '2019-09-25', 'Comedy'),
+       (7, 'Gravity', '2023-01-30', 'Science fiction'),
+       (5, 'Saw', '2022-06-11', 'Horror'),
+       (11, 'Rock Star', '2023-11-11', 'Music'),
+       (11, 'Jimmie', '2023-11-11', 'Music');
+

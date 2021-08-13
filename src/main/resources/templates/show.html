@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+    <style>
+        button {
+            background-color: #4169E1;
+            border: none;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            border-radius: 12px;
+        }
+        table,
+        th,
+        td {
+            padding: 10px;
+            /*border: 1px solid black;*/
+            border-collapse: collapse;
+            text-align: center;
+        }
+        .content {
+            width: 1000px;
+            margin: 5% auto auto;
+
+
+        }
+        table {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+            text-align: left;
+            border-collapse: separate;
+            border-spacing: 5px;
+            background: #ECE9E0;
+            color: #656665;
+            border: 16px solid #ECE9E0;
+            border-radius: 20px;
+        }
+        th {
+            font-size: 18px;
+            padding: 10px;
+        }
+        td {
+            background: #F5D7BF;
+            padding: 10px;
+        }
+        label {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+
+    <form th:method="GET" th:action="@{/movie/show}" style="text-align: top">
+        <label for="directorName">Last Name </label>
+        <input th:type="text" th:name="directorName" id="directorName"/>
+
+        <label for="startDate">Release from: </label>
+        <input th:type="date" th:name="startDate" id="startDate"/>
+
+        <label for="endDate">Release until: </label>
+        <input th:type="date" th:name="endDate" id="endDate"/>
+        <button th:type="submit"> Search</button>
+
+    </form>
+
+
+    <table>
+        <thead>
+        <tr>
+            <th> First Name</th>
+            <th> Last Name</th>
+            <th> Birth Date</th>
+            <th> Film Name</th>
+            <th> Release Date</th>
+            <th> Genre</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${movies.empty}">
+            <td colspan="2"> No movies Available</td>
+        </tr>
+        <tr th:each="movie : ${movies}">
+            <td width="15%"><span th:text="${movie.getDirector().getFirstName()}"> First Name </span></td>
+            <td><span th:text="${movie.getDirector().getLastName()}"> Last Name </span></td>
+            <td><span th:text="${movie.getDirector().getBirthDate()}"> Birth Date </span></td>
+            <td><span th:text="${movie.getName()}"> Film Name </span></td>
+            <td><span th:text="${movie.getReleaseDate()}"> Release Date </span></td>
+            <td><span th:text="${movie.getGenre()}"> Genre </span></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
